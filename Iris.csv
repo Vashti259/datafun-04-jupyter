@@ -1,0 +1,25 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Load the Iris dataset from Seaborn
+iris = sns.load_dataset('iris')
+
+# Data preprocessing
+# Separate features and target variable
+X = iris.drop('species', axis=1)
+y = iris['species']
+
+# Data processing
+# Perform any necessary data processing steps here
+
+# Data analysis
+# Calculate summary statistics
+summary_stats = X.describe()
+print("Summary Statistics:")
+print(summary_stats)
+
+# Plot the graph using Seaborn and Matplotlib
+sns.set(style="ticks")
+sns.pairplot(iris, hue="species")
+plt.show()
